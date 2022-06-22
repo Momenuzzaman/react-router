@@ -1,3 +1,4 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Components/About/About';
 import Friends from './Components/Friends/Friends';
@@ -7,10 +8,13 @@ import PageNotFound from './Components/PageNotFound/PageNotFound';
 function App() {
   return (
     <div className="App">
-      <Home/>
-      <Friends/>
-      <About/>
-      <PageNotFound/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/home" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/friend" element={<Friends/>}/>
+        <Route path="*" element={<PageNotFound/>}/>
+      </Routes>
     </div>
   );
 }
