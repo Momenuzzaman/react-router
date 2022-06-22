@@ -1,0 +1,8 @@
+.header nav{
+   background-color: black;
+}
+.nav-link{
+    text-decoration: none;
+    color: white;
+    margin: 20px
+}
