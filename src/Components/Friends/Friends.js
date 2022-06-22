@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Friend from "../Friend/Friend";
+import "./Friends.css";
 
 const Friends = () => {
     const [friends,setFriends] = useState([]);
@@ -11,7 +12,7 @@ const Friends = () => {
     },[])
 
     return (
-        <div>
+        <div className="friends-container">
             {
                 friends.map(friend =><Friend friend={friend}></Friend> )
             }
