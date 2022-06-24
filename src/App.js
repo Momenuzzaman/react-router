@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Components/About/About';
+import FriendDetai from './Components/FriendDetail/FriendDetai';
 import Friends from './Components/Friends/Friends';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
@@ -15,6 +16,7 @@ function App() {
         <Route path="/friends" element={<Friends/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="*" element={<PageNotFound/>}/>
+        <Route path='/friend/:id' element={<FriendDetai></FriendDetai>}></Route>
       </Routes>
     </div>
   );
