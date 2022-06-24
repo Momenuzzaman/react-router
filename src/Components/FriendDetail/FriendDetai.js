@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const FriendDetai = () => {
     const {id} = useParams();
@@ -9,7 +9,11 @@ const FriendDetai = () => {
         fetch(url)
         .then(response => response.json())
         .then(data => setFriend(data))
-    },[])
+    },[]);
+    const navigate = useNavigate();
+    const handleBack = () => {
+        navigate('/friends')
+    }
 
     return (
         <div>
@@ -17,6 +21,7 @@ const FriendDetai = () => {
             <h2>{friend.email}</h2>
             <h2>{friend.company?.bs}</h2>
             <h2>{friend.company?.name}</h2>
+            <button onClick={handleBack}>see all friend</button>
         </div>
     );
 };
